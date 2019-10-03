@@ -47,5 +47,5 @@ class MovieDB {
   
 }
 
-export default MovieDB;
+//export default MovieDB;
 

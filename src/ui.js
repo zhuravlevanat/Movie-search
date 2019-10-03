@@ -6,14 +6,22 @@ class UI {
   showData(movies, genres) {
     const movieGenres = genres.join(', ');
     this.output.innerHTML += `
-    <h1>${movies.title}</h1>
-    <span>${movies.release_date}</span>
-    <p>${movies.overview}</p>
-    <p>${movieGenres}</p>
-    <img class ="movie-backdrop" src = 'http://image.tmdb.org/t/p/w300/${movies.backdrop_path}'></img>
+    <div class="row">
+    <div class="four columns">
+      <img class ="movie-backdrop" 
+        src = 'http://image.tmdb.org/t/p/w300/${movies.poster_path}'></img>
+    </div>
+    <div class="eight columns">
+      <h1 class="movie-title">${movies.title}</h1>      
+      <p class="movie-overview">${movies.overview}</p>
+      <p class="movie-genres">${movieGenres}</p>
+      <span class="movie-release-data">Release date: ${movies.release_date}</span>
+      <p class ="movie-rate">${movies.vote_average}</p>
+    </div>
+    </div>
     ` ;
     
   }  
 }
 
-export default UI;
+//export default UI;

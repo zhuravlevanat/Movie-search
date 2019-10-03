@@ -1,0 +1,52 @@
+html {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #3d111f;
+  text-align: center;
+  padding: 2rem 0 0;
+}
+
+.container {
+
+}
+
+.search-title {
+  font-size: 2rem;
+  text-align: center;
+}
+.five.columns {
+  background-size: contain;
+  overflow: hidden;
+}
+
+.eight.columns {
+  position: relative;
+}
+
+.movie-title {
+  font-style: italic;
+  text-align: left;
+  width: 80%;
+  padding: 0;
+}
+
+.movie-overview {
+  font-size: 1.6rem;
+}
+
+.movie-genres {
+  text-transform: uppercase;
+}
+
+.movie-rate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 4rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #7c3248;
+}
