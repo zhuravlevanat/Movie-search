@@ -19,8 +19,7 @@ class UI {
       <p class ="movie-rate">${movies.vote_average}</p>
     </div>
     </div>
-    ` ;
-    
+    ` ;    
   }  
 }
 

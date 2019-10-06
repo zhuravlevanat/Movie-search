@@ -1,22 +1,28 @@
 class MovieDB {
-  constructor() {
-    this._key = '28ae3beaaffa9842263e6e671dfde8d0';
+  constructor() {    
   }
 
+  static urlNowPlayingMovie = `https://api.themoviedb.org/3/movie/now_playing?api_key=28ae3beaaffa9842263e6e671dfde8d0&language=en-US&page=1`;
+  static urlPopularMovie = `https://api.themoviedb.org/3/movie/popular?api_key=28ae3beaaffa9842263e6e671dfde8d0&language=en-US&page=1`;
+  static urlTopRatedMovie = `https://api.themoviedb.org/3/movie/top_rated?api_key=28ae3beaaffa9842263e6e671dfde8d0&language=en-US&page=1`
+  static urlMovieGenre = `https://api.themoviedb.org/3/genre/movie/list?api_key=28ae3beaaffa9842263e6e671dfde8d0&language=en-US`
+
   async getNowPlaying() {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this._key}&language=en-US&page=1`);
+    const response = await fetch(MovieDB.urlNowPlayingMovie);
 
-    const nowPlayingMovie = await response.json();
-
+    const responseObj = await response.json();
+    const nowPlayingMovie = responseObj.results;
+    
     return {
       nowPlayingMovie
     }
   }
 
   async getPopular() {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${this._key}&language=en-US&page=1`);
+    const response = await fetch(MovieDB.urlPopularMovie);
 
-    const popularMovie = await response.json();
+    const responseObj = await response.json();
+    const popularMovie = responseObj.results;
 
     return {
       popularMovie
@@ -24,27 +30,24 @@ class MovieDB {
   }
 
   async getTopRated() {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${this._key}&language=en-US&page=1`);
+    const response = await fetch(MovieDB.urlTopRatedMovie);
 
-    const topRatedMovie = await response.json();
+    const responseObj = await response.json();
+    const topRatedMovie = responseObj.results;
 
     return {
       topRatedMovie
     }
   }
 
-  async getMovieGenre() {
-    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this._key}&language=en-US`);
+  async getMovieGenres() {
+    const response = await fetch(MovieDB.urlMovieGenre);
 
-    const movieGenre = await response.json();
-
-    return {
-      movieGenre
-    }
-  }
-
-  
-  
+    const responseObj = await response.json();
+    const arrayOfMovieGenres = responseObj.genres;
+    
+    return arrayOfMovieGenres;
+  }  
 }
 
 //export default MovieDB;
