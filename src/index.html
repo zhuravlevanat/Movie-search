@@ -15,17 +15,24 @@
     <h1>Movie finder</h1>
     <p class="search-title">Search movie from the Movie DB</p> 
     <select id="movie-search">
-      <option value="0">Choose some category</option>
-      <option value="1">What movies are playing now?</option>
-      <option value="2">What are the most popular movies?</option>
-      <option value="3">What are the highest rated movies?</option>    
+      <option value="default">Choose some category</option>
+      <option value="NowPlaying">What movies are playing now?</option>
+      <option value="Popular">What are the most popular movies?</option>
+      <option value="TopRated">What are the highest rated movies?</option>    
     </select>
-    <div id="output"></div>
+    <div id="output">
+    </div>
+    <ul id="pagination" class="gallery-pagination">
+
+    </ul>
   
   </div>
-    <script src="./movieDB.js"></script>
-    <script src="./ui.js"></script>  
-    <script src="./app.js"></script>
+  <script type="text/template" id="paginationItemTemplate">
+    <li data-page-index="{{index}}" class="pagination-item">{{title}}</li>
+  </script>
+  <script src="./movieDB.js"></script>
+  <script src="./ui.js"></script>  
+  <script src="./app.js"></script>
   
 </body>
 </html>

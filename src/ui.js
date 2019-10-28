@@ -1,7 +1,10 @@
+'use strict';
+
 class UI {
   constructor() {
     this.output = document.getElementById('output');
   }
+  
 
   showData(movies, genres) {
     const movieGenres = genres.join(', ');
@@ -20,7 +23,8 @@ class UI {
     </div>
     </div>
     ` ;    
-  }  
+  }   
+  
 }
 
 //export default UI;

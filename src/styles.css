@@ -2,6 +2,10 @@ html {
   font-family: 'Ubuntu', sans-serif;
 }
 
+.container {
+  position: relative;
+}
+
 h1 {
   font-size: 4rem;
   color: #3d111f;
@@ -45,4 +49,29 @@ h1 {
   font-weight: bold;
   font-style: italic;
   color: #7c3248;
+}
+
+.gallery-pagination {
+  margin-top: 100px;
+  position: absolute;
+  bottom: -125px;
+  list-style: none;  
+  opacity: 0.7;
+  width: 100%;  
+  text-align: center;
+  user-select: none;
+}
+
+.pagination-item {
+  display: inline;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid rgb(110, 104, 104);
+  color: rgb(48, 46, 46);
+  cursor: pointer;
+}
+
+.pagination-item.active{
+  background-color: lightgray;
+  color: black;
 }
